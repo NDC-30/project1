@@ -3,7 +3,7 @@
 
 session_start();
 if (isset($_SESSION['auth']['admin'])) {
-    header("Location: /doan2.0/admin/home.php");
+    header("Location:/doan2.0/admin/home.php");
     die();
 }
 ?>
@@ -14,10 +14,23 @@ if (isset($_SESSION['auth']['admin'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .full-screen {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
+  
 <!-- Login 1 - Bootstrap Brain Component -->
-<div class="bg-light py-3 py-md-5">
+<div class="bg-light container-fluid full-screen">
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
@@ -26,7 +39,7 @@ if (isset($_SESSION['auth']['admin'])) {
             <div class="col-12">
               <div class="text-center mb-5">
                 <a href="#!">
-                  <img src="./assets/img/bsb-logo.svg" alt="BootstrapBrain Logo" width="175" height="57">
+                  <img src="/doan2.0/admin/img/logo.png" alt="BootstrapBrain Logo" width="175" height="175">
                 </a>
               </div>
             </div>
@@ -58,7 +71,7 @@ if (isset($_SESSION['auth']['admin'])) {
               </div>
               <div class="col-12">
                 <div class="d-grid">
-                  <button class="btn btn-primary btn-lg" type="submit">Log In</button>
+                  <button class="btn btn btn-lg" style="background-color: rgb(220, 203, 74); type="submit">Log In</button>
                 </div>
               </div>
             </div>
@@ -67,7 +80,6 @@ if (isset($_SESSION['auth']['admin'])) {
             <div class="col-12">
               <hr class="mt-5 mb-4 border-secondary-subtle">
               <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center">
-                <a href="#!" class="link-secondary text-decoration-none">Create new account</a>
                 <a href="#!" class="link-secondary text-decoration-none">Forgot password</a>
               </div>
             </div>
